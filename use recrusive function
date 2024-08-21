@@ -10,3 +10,69 @@ y = 10
 bhai = maggie(x, y)
 
 print("Sum is " + str(bhai))
+
+
+------------------------------
+
+The code you provided essentially performs an addition operation using recursion. Let's break down how it works:
+
+```python
+def maggie(x, y):
+    if y == 0:
+        return x
+    else:
+        return maggie(x + 1, y - 1)
+
+x = 11
+y = 10
+
+bhai = maggie(x, y)
+
+print("Sum is " + str(bhai))
+```
+
+### Understanding the Function
+
+1. **Function Definition:**
+   ```python
+   def maggie(x, y):
+       if y == 0:
+           return x
+       else:
+           return maggie(x + 1, y - 1)
+   ```
+   - The function `maggie` takes two arguments, `x` and `y`.
+   - If `y` is 0, it simply returns `x`.
+   - Otherwise, it calls itself with `x + 1` and `y - 1`.
+
+2. **Initial Call:**
+   ```python
+   x = 11
+   y = 10
+
+   bhai = maggie(x, y)
+   ```
+   - Here, `x` is initialized to 11 and `y` is initialized to 10.
+   - The function `maggie` is called with these values.
+
+### How the Recursion Works
+
+- **First Call:** `maggie(11, 10)`
+  - `y` is not 0, so it calls `maggie(12, 9)`.
+  
+- **Second Call:** `maggie(12, 9)`
+  - `y` is not 0, so it calls `maggie(13, 8)`.
+  
+- **Third Call:** `maggie(13, 8)`
+  - `y` is not 0, so it calls `maggie(14, 7)`.
+  
+  (This process continues, incrementing `x` and decrementing `y`.)
+
+- **Nth Call:** `maggie(21, 0)`
+  - `y` is now 0, so it returns `x`, which is 21.
+
+### Result
+
+The function `maggie` is effectively adding `y` to `x`. Since `y` is 10, and it starts with `x` as 11, the final result is `11 + 10 = 21`. 
+
+Thus, when the function finishes, it returns 21, which is printed as the sum. This explains why the output is 21 even though you didn't explicitly ask to add numbers—it's the result of how the recursion is designed to increment `x` by 1 each time `y` is decremented by 1.
