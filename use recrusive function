@@ -1,0 +1,12 @@
+def maggie(x, y):
+    if y == 0:
+        return x
+    else:
+        return maggie(x + 1, y - 1)
+
+x = 11
+y = 10
+
+bhai = maggie(x, y)
+
+print("Sum is " + str(bhai))
