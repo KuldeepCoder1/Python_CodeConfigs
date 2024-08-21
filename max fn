@@ -1,0 +1,5 @@
+a = 2
+b = 424342
+
+choka = max(a, b)
+print(choka)
