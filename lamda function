@@ -1,0 +1,8 @@
+tinku = lambda x, y: x + y
+
+a = 1
+b = 2
+
+lelo = tinku(a, b)
+
+print("Sum is " + str(lelo))
